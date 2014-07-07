@@ -7,14 +7,14 @@ public class Subset {
 	 * @param k - outcomes
 	 * @return Returns the number of ways of picking {@code k} unordered outcomes from {@code n} possibilities 
 	 */
-	public static long compute(int possibilities, int k) {
-		if (possibilities == 0 && k == 0)
+	public static long compute(int n, int k) {
+		if (n == 0 && k == 0)
 			return 1;
 
-		if (possibilities == 0)
+		if (n == 0)
 			return 0L;
 
-		return Util.factorial(possibilities)
-				/ (Util.factorial(k) * Util.factorial(possibilities - k));
+		return Util.factorial(n)
+				/ (Util.factorial(k) * Util.factorial(n - k));
 	}
 }

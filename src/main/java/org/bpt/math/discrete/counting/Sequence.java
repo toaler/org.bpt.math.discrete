@@ -4,37 +4,19 @@ public class Sequence {
 
 	/**
 	 * Computes the permutation of a sequence with repetition. Given {code
-	 * things} things, choose {@code choose} items, potentially recurring. In
-	 * other words, there are n possibilities for the first choice, and there
-	 * are n possibilities for the second choice, and so on, multiplying each
+	 * n} possibilities, choose {@code k} outcomes, potentially recurring. In
+	 * other words, there are {@code n} possibilities for the first choice, and there
+	 * are {@code n - 1} possibilities for the second choice, and so on, multiplying each
 	 * time.
 	 * 
-	 * @param things
-	 * @param choose
+	 * @param n - possibilities
+	 * @param k - outcomes
 	 * @return returns the permutation with repetition
 	 */
-	public static long permutationWithRepetition(int things, int choose) {
-		if (things <= 0 || choose <= 0 || things < choose) {
+	public static long compute(int n, int k) {
+		if (n <= 0 || k <= 0 || n < k) {
 			throw new IllegalArgumentException();
 		}
-		return (long) Math.pow(things, choose);
-	}
-
-	/**
-	 * Computes the permutation of a sequence with without repetition. Given
-	 * {code things} things, choose {@code choose} unique items. In other words,
-	 * there are n possibilities for the first choice, and there are n - 1
-	 * possibilities for the second choice, and so on, multiplying each time.
-	 * 
-	 * @param things
-	 * @param choose
-	 * @return returns the permutation with repetition
-	 */
-	public static long permutationWithoutRepetition(int things, int choose) {
-		if (things <= 0 || choose <= 0 || things < choose) {
-			throw new IllegalArgumentException();
-		}
-
-		return Util.factorial(things) / Util.factorial(things - choose);
+		return (long) Math.pow(n, k);
 	}
 }
