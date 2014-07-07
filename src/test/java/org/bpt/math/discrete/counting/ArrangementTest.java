@@ -1,10 +1,12 @@
 package org.bpt.math.discrete.counting;
 
+import java.math.BigInteger;
+
 import junit.framework.TestCase;
 
 public class ArrangementTest extends TestCase {
 	public void testPermutationWithoutRepetition() {
-		assertEquals(3360, Arrangement.compute(16, 3));
+		assertEquals(BigInteger.valueOf(3360), Arrangement.compute(16, 3));
 	}
 	
 	public void testPermutationWithoutRepetitionIllegalThings() {

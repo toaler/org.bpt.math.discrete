@@ -1,5 +1,7 @@
 package org.bpt.math.discrete.counting;
 
+import java.math.BigInteger;
+
 public class Sequence {
 
 	/**
@@ -13,10 +15,10 @@ public class Sequence {
 	 * @param k - outcomes
 	 * @return returns the permutation with repetition
 	 */
-	public static long compute(int n, int k) {
-		if (n <= 0 || k <= 0 || n < k) {
+	public static BigInteger compute(int n, int k) {
+		if (n <= 0 || k <= 0) {
 			throw new IllegalArgumentException();
 		}
-		return (long) Math.pow(n, k);
+		return BigInteger.valueOf(n).pow(k);
 	}
 }

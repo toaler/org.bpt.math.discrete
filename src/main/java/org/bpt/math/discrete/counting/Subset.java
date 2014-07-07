@@ -1,20 +1,24 @@
 package org.bpt.math.discrete.counting;
 
-public class Subset {
+import java.math.BigInteger;
 
+public class Subset {
 	/**
 	 * @param n - possibilities
 	 * @param k - outcomes
-	 * @return Returns the number of ways of picking {@code k} unordered outcomes from {@code n} possibilities 
+	 * @return Returns the number of ways of picking {@code k} unordered outcomes, from {@code n} redundant possibilities
 	 */
-	public static long compute(int n, int k) {
-		if (n == 0 && k == 0)
-			return 1;
+	public static BigInteger compute(int nInt, int kInt) {
+		BigInteger n = BigInteger.valueOf(nInt);
+		BigInteger k = BigInteger.valueOf(kInt);
+		
+		if (n.equals(BigInteger.ZERO) && k.equals(BigInteger.ZERO))
+			return BigInteger.ONE;
 
-		if (n == 0)
-			return 0L;
+		if (n.equals(BigInteger.ZERO))
+			return BigInteger.ZERO;
+		
 
-		return Util.factorial(n)
-				/ (Util.factorial(k) * Util.factorial(n - k));
+		return Util.factorial(n).divide((Util.factorial(k).multiply(Util.factorial(n.subtract(k)))));
 	}
 }

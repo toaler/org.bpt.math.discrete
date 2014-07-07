@@ -1,5 +1,7 @@
 package org.bpt.math.discrete.counting;
 
+import java.math.BigInteger;
+
 public class Arrangement {
 	/**
 	 * Computes the permutation of a sequence with without repetition. Given
@@ -11,11 +13,11 @@ public class Arrangement {
 	 * @param k - outcomes
 	 * @return returns the permutation with repetition
 	 */
-	public static long compute(int n, int k) {
+	public static BigInteger compute(int n, int k) {
 		if (n <= 0 || k <= 0 || n < k) {
 			throw new IllegalArgumentException();
 		}
 
-		return Util.factorial(n) / Util.factorial(n - k);
+		return Util.factorial(n).divide(Util.factorial(n - k));
 	}
 }
