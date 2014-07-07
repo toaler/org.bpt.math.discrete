@@ -35,15 +35,6 @@ public class Sequence {
 			throw new IllegalArgumentException();
 		}
 
-		return factorial(things) / factorial(things - choose);
-	}
-
-	private static long factorial(int n) {
-		long result = 1L;
-		for (int i = n; i > 0; i--) {
-			result *= i;
-		}
-
-		return result;
+		return Util.factorial(things) / Util.factorial(things - choose);
 	}
 }

@@ -12,8 +12,10 @@ public class SequenceTest extends TestCase {
 		try {
 			assertEquals(1000, Sequence.permutationWithRepetition(0, 3));
 			fail();
-		} catch (Exception e) {
+		} catch (IllegalArgumentException e) {
 			// success
+		} catch (Exception e) {
+			fail();
 		}
 	}
 	
@@ -21,15 +23,19 @@ public class SequenceTest extends TestCase {
 		try {
 			assertEquals(1000, Sequence.permutationWithRepetition(3, 0));
 			fail();
-		} catch (Exception e) {
+		} catch (IllegalArgumentException e) {
 			// success
+		} catch (Exception e) {
+			fail();
 		}
 		
 		try {
 			assertEquals(1000, Sequence.permutationWithRepetition(3, 4));
 			fail();
-		} catch (Exception e) {
+		} catch (IllegalArgumentException e) {
 			// success
+		} catch (Exception e) {
+			fail();
 		}
 	}
 
@@ -41,8 +47,10 @@ public class SequenceTest extends TestCase {
 		try {
 			assertEquals(1000, Sequence.permutationWithoutRepetition(0, 3));
 			fail();
-		} catch (Exception e) {
+		} catch (IllegalArgumentException e) {
 			// success
+		} catch (Exception e) {
+			fail();
 		}
 	}
 	
@@ -50,15 +58,19 @@ public class SequenceTest extends TestCase {
 		try {
 			assertEquals(1000, Sequence.permutationWithoutRepetition(3, 0));
 			fail();
-		} catch (Exception e) {
+		} catch (IllegalArgumentException e) {
 			// success
+		} catch (Exception e) {
+			fail();
 		}
 		
 		try {
 			assertEquals(1000, Sequence.permutationWithoutRepetition(3, 4));
 			fail();
-		} catch (Exception e) {
+		} catch (IllegalArgumentException e) {
 			// success
+		} catch (Exception e) {
+			fail();
 		}
 	}
 }
